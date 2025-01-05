@@ -9,7 +9,7 @@ C++ headers were dumped using [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS), 
 This project only contains asset files for non-graphical assets due to file size limitations. You'll need to import the models, materials, sounds and textures you need on your own.
 
 The majority of C++ classes and Blueprints are only dummies. If you have experience with reversing and want to contribute, feel free to help out.  You can see the current list of what files have been
-reversed by checking [Progress.md](https://github.com/bombasticmori/SMT5V-Project/blob/master/PROGRESS.md?plain=1)
+reversed by checking [Progress.md](https://github.com/bombasticmori/SMT5V-Project/blob/master/PROGRESS.md?plain=1).
 
 No content from the non-open source plugins should be reversed unless absolutely necessary. The non-open source plugins distributed here are dummies that only contain parameters and functions names from those plugins, but no actual code.
 This is so the files will map to the ones distributed with the game engine on runtime.
@@ -36,10 +36,10 @@ Recommended:
 1) Clone the repository
 2) Right click the SMT5V project file and click "Generate Visual Studio project files"
 3) Open the project in Unreal Engine 4.27.2.  It will ask you to compile. Let it (it might take a while)
-4) (Recommended) Cook your files on loading into the Editor the first time. It might take a while. After cooking is finished, go to Project Settings -> Cooker -> Turn on Iterative Cooking from File Menu so that when you need to cook again, it only does what's changed.
+4) (Recommended) Cook your files on loading into the Editor the first time. If you find it can't cook despite having no changes made, please raise an issue.  You can try enabling Iterative Cooking for your own work, via Project Settings -> Cooker -> Iterative cooking for the File-> Cook Content menu item setting, but your results may vary.
 
 ### Credits
-Included Plugins:
+Included Plugins (under MIT license):
 [KawaiiPhysics](https://github.com/pafuhana1213/KawaiiPhysics)
 [ACL](https://github.com/nfrechette/acl)
 
