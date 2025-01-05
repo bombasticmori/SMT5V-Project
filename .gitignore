@@ -9,11 +9,14 @@ DerivedDataCache/
 Intermediate/
 Build/
 Saved/
+Script/
 Content/Collections/
 Content/Developers/
 Content/NoSync/
 Plugins/ACLPlugin/Binaries/
 Plugins/ACLPlugin/Intermediate/
+Plugins/AssetDumper/
+Plugins/AssetGenerator/
 Plugins/AtRichTextWidget/Binaries/
 Plugins/AtRichTextWidget/Intermediate/
 Plugins/BacktraceOnCrashpad/Binaries/
