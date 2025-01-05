@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_UI_STATUS_PAGE_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_UI_STATUS_PAGE_TYPE : uint8 {
+    E_UI_STATUS_PAGE_TYPE_SKILL,
+    E_UI_STATUS_PAGE_TYPE_CONDITION,
+    E_UI_STATUS_PAGE_TYPE_BIOGRAPHY,
+    E_UI_STATUS_PAGE_TYPE_SKILLSWAP,
+    E_UI_STATUS_PAGE_TYPE_INVISIBLE,
+};
+

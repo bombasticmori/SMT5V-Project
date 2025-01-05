@@ -1,0 +1,49 @@
+Shin Megami Tensei 5: Vengeance Modding Project
+------------------------------------------
+
+### Description:
+This is an SDK for Shin Megami Tensei 5: Vengeance, allowing modders to potentially modify more advanced game content.  It's similar in concept to [P3R-Project](https://github.com/rirurin/P3R-Project/)
+
+C++ headers were dumped using [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS), then serializable files were generated from the game files with [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator) and ported into Unreal Engine with [UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes).
+
+This project only contains asset files for non-graphical assets due to file size limitations. You'll need to import the models, materials, sounds and textures you need on your own.
+
+The majority of C++ classes and Blueprints are only dummies. If you have experience with reversing and want to contribute, feel free to help out.  You can see the current list of what files have been
+reversed by checking Progress.md
+
+No content from the non-open source plugins should be reversed unless absolutely necessary. The non-open source plugins distributed here are dummies that only contain parameters and functions names from those plugins, but no actual code.
+This is so the files will map to the ones distributed with the game engine on runtime.
+
+### Requirements:
+Unreal Engine 4.27.2
+
+For Materials and Textures:
+[UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes)
+
+If you want to bulk generate FBX Model data, you will also need:
+[Blender 3.6](https://www.blender.org/download/releases/3-6/)
+[Blender3D Import psk psa addon](https://github.com/matyalatte/blender3d_import_psk_psa)
+[UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)
+Follow the UEAssetToolkitGenerator wiki guide for Generating FBX
+
+If you want to help reverse engineer blueprints, you will need:
+[KismetKompiler](https://github.com/tge-was-taken/KismetKompiler/)
+
+Recommended:
+[UnrealAutoMod](https://github.com/Mythical-Github/unreal_auto_mod) OR [UnrealAutoModInEditor](https://github.com/Mythical-Github/UnrealAutoModInEditor)
+
+### Installation:
+1) Clone the repository
+2) Right click the SMT5V project file and click "Generate Visual Studio project files"
+3) Open the project in Unreal Engine 4.27.2.  It will ask you to compile. Let it (it might take a while)
+4) (Recommended) Cook your files on loading into the Editor the first time. It might take a while. After cooking is finished, go to Project Settings -> Cooker -> Turn on Iterative Cooking from File Menu so that when you need to cook again, it only does what's changed.
+
+### Credits
+Included Plugins:
+[KawaiiPhysics](https://github.com/pafuhana1213/KawaiiPhysics)
+[ACL](https://github.com/nfrechette/acl)
+
+Tools Used:
+[RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS)
+[UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)
+[UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes)

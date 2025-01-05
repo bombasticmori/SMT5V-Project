@@ -1,0 +1,11 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_CAMP_DEBUG_UPDATE_TASK_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_CAMP_DEBUG_UPDATE_TASK_TYPE : uint8 {
+    E_CAMP_DEBUG_UPDATE_TASK_TYPE_NONE,
+    E_CAMP_DEBUG_UPDATE_TASK_TYPE_SKILL_LIB,
+    E_CAMP_DEBUG_UPDATE_TASK_TYPE_PROPERTY,
+};
+

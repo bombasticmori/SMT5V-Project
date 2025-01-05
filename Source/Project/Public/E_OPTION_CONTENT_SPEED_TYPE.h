@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_OPTION_CONTENT_SPEED_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_OPTION_CONTENT_SPEED_TYPE : uint8 {
+    E_OPTION_CONTENT_SPEED_TYPE_X1,
+    E_OPTION_CONTENT_SPEED_TYPE_X2,
+    E_OPTION_CONTENT_SPEED_TYPE_X3,
+    E_OPTION_CONTENT_SPEED_TYPE_X4,
+    E_OPTION_CONTENT_SPEED_TYPE_SKIP,
+};
+

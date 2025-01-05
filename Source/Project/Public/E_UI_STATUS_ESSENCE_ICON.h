@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_UI_STATUS_ESSENCE_ICON.generated.h"
+
+UENUM(BlueprintType)
+enum class E_UI_STATUS_ESSENCE_ICON : uint8 {
+    E_UI_STATUS_ESSENCE_ICON_INVISIBLE,
+    E_UI_STATUS_ESSENCE_ICON_NOT_YET,
+    E_UI_STATUS_ESSENCE_ICON_OWNE,
+    E_UI_STATUS_ESSENCE_ICON_USED,
+    E_UI_STATUS_ESSENCE_ICON_NONE,
+};
+

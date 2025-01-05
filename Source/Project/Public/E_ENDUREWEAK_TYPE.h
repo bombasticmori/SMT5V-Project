@@ -1,0 +1,14 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_ENDUREWEAK_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_ENDUREWEAK_TYPE : uint8 {
+    E_ENDUREWEAK_TYPE_NORMAL,
+    E_ENDUREWEAK_TYPE_BLOCK,
+    E_ENDUREWEAK_TYPE_WEAK,
+    E_ENDUREWEAK_TYPE_REFLEX,
+    E_ENDUREWEAK_TYPE_ABSORB,
+    E_ENDUREWEAK_TYPE_ENDURE,
+};
+

@@ -1,0 +1,25 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "",
+	"FriendlyName" : "CRIWARE Plugin",
+	"Description" : "CRIWARE Plugin for Unreal Engine 4",
+	"Category" : "Other",
+	"CreatedBy" : "",
+	"CreatedByURL" : "",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : true,
+	"IsBetaVersion" : false,
+	"Installed" : false,
+	"Modules" :
+	[
+		{
+			"Name" : "CriWareRuntime",
+			"Type" : "Runtime",
+			"LoadingPhase": "PostConfigInit"
+		}
+	]
+}

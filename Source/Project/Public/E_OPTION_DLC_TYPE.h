@@ -1,0 +1,14 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_OPTION_DLC_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_OPTION_DLC_TYPE : uint8 {
+    E_OPTION_DLC_TYPE_DIFFICULTY_EASY,
+    E_OPTION_DLC_TYPE_DIFFICULTY_VERY_HARD,
+    E_OPTION_DLC_TYPE_JP_VOICE,
+    E_OPTION_DLC_TYPE_CHEAT_MONEY,
+    E_OPTION_DLC_TYPE_CHEAT_EXP,
+    E_OPTION_DLC_TYPE_CHEAT_GLORY,
+};
+

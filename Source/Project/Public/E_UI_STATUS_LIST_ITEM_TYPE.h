@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_UI_STATUS_LIST_ITEM_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_UI_STATUS_LIST_ITEM_TYPE : uint8 {
+    E_UI_STATUS_LIST_ITEM_TYPE_SKILL,
+    E_UI_STATUS_LIST_ITEM_TYPE_ITEM,
+    E_UI_STATUS_LIST_ITEM_TYPE_CONDITION,
+    E_UI_STATUS_LIST_ITEM_TYPE_GOD,
+    E_UI_STATUS_LIST_ITEM_TYPE_END_BUTTON,
+};
+

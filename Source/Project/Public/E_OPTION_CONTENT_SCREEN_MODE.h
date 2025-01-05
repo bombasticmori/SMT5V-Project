@@ -1,0 +1,11 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_OPTION_CONTENT_SCREEN_MODE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_OPTION_CONTENT_SCREEN_MODE : uint8 {
+    E_OPTION_CONTENT_SCREEN_MODE_FULL_SCREEN,
+    E_OPTION_CONTENT_SCREEN_MODE_BORDERLESS,
+    E_OPTION_CONTENT_SCREEN_MODE_WINDOW,
+};
+

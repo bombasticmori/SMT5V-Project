@@ -1,0 +1,17 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_SKILL_BARRIER_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_SKILL_BARRIER_TYPE : uint8 {
+    E_SKILL_BARRIER_PHISICS,
+    E_SKILL_BARRIER_FIRE,
+    E_SKILL_BARRIER_ICE,
+    E_SKILL_BARRIER_THUNDER,
+    E_SKILL_BARRIER_WIND,
+    E_SKILL_BARRIER_LIGHT,
+    E_SKILL_BARRIER_DARK,
+    E_SKILL_BARRIER_SOUL_BAD,
+    E_SKILL_BARRIER_PHISICS_BAD,
+};
+

@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_UNITECHARAPANEL_DEVILDATATYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_UNITECHARAPANEL_DEVILDATATYPE : uint8 {
+    E_DEVILDATATYPE_NONE,
+    E_DEVILDATATYPE_BASE,
+    E_DEVILDATATYPE_NAKAMA,
+    E_DEVILDATATYPE_BOOK,
+    E_DEVILDATATYPE_UTSUSEMI,
+};
+

@@ -1,0 +1,20 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_BTL_EVT_COND.generated.h"
+
+UENUM(BlueprintType)
+enum class E_BTL_EVT_COND : uint8 {
+    E_BTL_EVT_COND_NONE,
+    E_BTL_EVT_COND_FLAG_ON,
+    E_BTL_EVT_COND_FLAG_OFF,
+    E_BTL_EVT_COND_HERO_HP_DOWN,
+    E_BTL_EVT_COND_ENEMY_HP_DOWN,
+    E_BTL_EVT_COND_TURN_AFTER,
+    E_BTL_EVT_COND_TURN_BEFORE,
+    E_BTL_EVT_COND_EVENT_INDEX,
+    E_BTL_EVT_COND_WIN_SUCCESS,
+    E_BTL_EVT_COND_WIN_FAILED,
+    E_BTL_EVT_COND_DOWN,
+    E_BTL_EVT_COND_DEVIL_ID,
+};
+

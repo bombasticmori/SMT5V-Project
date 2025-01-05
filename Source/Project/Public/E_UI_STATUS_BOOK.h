@@ -1,0 +1,18 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_UI_STATUS_BOOK.generated.h"
+
+UENUM(BlueprintType)
+enum class E_UI_STATUS_BOOK : uint8 {
+    E_UI_STATUS_BOOK_INVISIBLE,
+    E_UI_STATUS_BOOK_NON,
+    E_UI_STATUS_BOOK_MEMBER,
+    E_UI_STATUS_BOOK_BOOK,
+    E_UI_STATUS_BOOK_OLD,
+    E_UI_STATUS_BOOK_NEW,
+    E_UI_STATUS_BOOK_UNENROLLED,
+    E_UI_STATUS_BOOK_GUEST,
+    E_UI_STATUS_BOOK_CUSTOM,
+    E_UI_STATUS_BOOK_ORIGINAL,
+};
+

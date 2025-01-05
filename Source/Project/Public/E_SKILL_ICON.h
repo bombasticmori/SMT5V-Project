@@ -1,0 +1,21 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_SKILL_ICON.generated.h"
+
+UENUM(BlueprintType)
+enum class E_SKILL_ICON : uint8 {
+    E_SKILL_ICON_PHISICS,
+    E_SKILL_ICON_FIRE,
+    E_SKILL_ICON_ICE,
+    E_SKILL_ICON_THUNDER,
+    E_SKILL_ICON_WIND,
+    E_SKILL_ICON_LIGHT,
+    E_SKILL_ICON_DARK,
+    E_SKILL_ICON_ALL,
+    E_SKILL_ICON_NODAMAGE_ATK,
+    E_SKILL_ICON_AID,
+    E_SKILL_ICON_RECOVERY,
+    E_SKILL_ICON_SPECIAL,
+    E_SKILL_ICON_TWO,
+};
+

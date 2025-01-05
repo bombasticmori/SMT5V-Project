@@ -1,0 +1,14 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_BTL_MAIN_COMMAND_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_BTL_MAIN_COMMAND_TYPE : uint8 {
+    E_BTL_MAIN_COMMAND_TYPE_SKILL,
+    E_BTL_MAIN_COMMAND_TYPE_ITEM,
+    E_BTL_MAIN_COMMAND_TYPE_TALK,
+    E_BTL_MAIN_COMMAND_TYPE_SUMMON,
+    E_BTL_MAIN_COMMAND_TYPE_ACT_END,
+    E_BTL_MAIN_COMMAND_TYPE_UNIT_FORM,
+};
+

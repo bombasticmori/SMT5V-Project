@@ -1,0 +1,24 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_BTL_UI_COMMAND.generated.h"
+
+UENUM(BlueprintType)
+enum class E_BTL_UI_COMMAND : uint8 {
+    E_BTL_UI_COMM_NONE,
+    E_BTL_UI_COMM_SKILL,
+    E_BTL_UI_COMM_ITEM,
+    E_BTL_UI_COMM_SUMMON,
+    E_BTL_UI_COMM_TALK,
+    E_BTL_UI_COMM_ESCAPE,
+    E_BTL_UI_COMM_ACT_END,
+    E_BTL_UI_COMM_UNIT_FORM,
+    E_BTL_UI_COMM_PRV_CHAR,
+    E_BTL_UI_COMM_NEXT_CHAR,
+    E_BTL_UI_COMM_AUTO,
+    E_BTL_UI_COMM_CONDITION,
+    E_BTL_UI_COMM_ANALYZE,
+    E_BTL_UI_COMM_BTL_PLAN,
+    E_BTL_UI_COMM_EXCHANGE,
+    E_BTL_UI_COMM_TARGET_SELECT,
+};
+

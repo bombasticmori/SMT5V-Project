@@ -1,0 +1,17 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_AUTO_SKILL_EFT_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_AUTO_SKILL_EFT_TYPE : uint8 {
+    E_AUTO_SKILL_EFT_NONE,
+    E_AUTO_SKILL_EFT_RESIST,
+    E_AUTO_SKILL_EFT_BLOCK,
+    E_AUTO_SKILL_EFT_REFLEX,
+    E_AUTO_SKILL_EFT_ABSORB,
+    E_AUTO_SKILL_EFT_BOOST,
+    E_AUTO_SKILL_EFT_HIGHBOOST,
+    E_AUTO_SKILL_EFT_CRI_BOOST,
+    E_AUTO_SKILL_EFT_CRI_HIGHBOOST,
+};
+

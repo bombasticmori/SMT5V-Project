@@ -1,0 +1,18 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_MAP_3D_ICON.generated.h"
+
+UENUM(BlueprintType)
+enum class E_MAP_3D_ICON : uint8 {
+    E_MAP_3D_ICON_NONE,
+    E_MAP_3D_ICON_ENEMY_ACTIVE,
+    E_MAP_3D_ICON_ENEMY_IDLE,
+    E_MAP_3D_ICON_MISSION_ENTRY,
+    E_MAP_3D_ICON_MISSION_PROGRESS,
+    E_MAP_3D_ICON_MISSION_REPORT,
+    E_MAP_3D_ICON_MAIN_TARGET,
+    E_MAP_3D_ICON_SUB_TARGET,
+    E_MAP_3D_ICON_TALK,
+    E_MAP_3D_ICON_AUTO,
+};
+

@@ -1,0 +1,25 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_BTL_END.generated.h"
+
+UENUM(BlueprintType)
+enum class E_BTL_END : uint8 {
+    E_BTL_END_NONE,
+    E_BTL_END_ENEMY_0,
+    E_BTL_END_GAMEOVER,
+    E_BTL_END_GUEST_DEAD,
+    E_BTL_END_ESCAPE_PLAYER,
+    E_BTL_END_ESCAPE_ENEMY,
+    E_BTL_END_RENZOKU,
+    E_BTL_END_STONE,
+    E_BTL_END_EVENT,
+    E_BTL_END_ENDING,
+    E_BTL_END_TALK,
+    E_BTL_END_SCR_RESULT,
+    E_BTL_END_SCR_NORESULT,
+    E_BTL_END_WIN_FAILD,
+    E_BTL_END_WIN_SUCCESS,
+    E_BTL_END_TALK_PLAYER_ESCAPE,
+    E_BTL_END_GOTO_TITLE,
+};
+

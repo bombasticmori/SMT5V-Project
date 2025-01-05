@@ -1,0 +1,14 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "RESULT_JOINDATA.generated.h"
+
+UENUM(BlueprintType)
+enum class RESULT_JOINDATA : uint8 {
+    RESULT_JOINDATA_JOIN,
+    RESULT_JOINDATA_STOCK,
+    RESULT_JOINDATA_DEAD,
+    RESULT_JOINDATA_LVUP_EXP,
+    RESULT_JOINDATA_QUEST,
+    RESULT_JOINDATA_FUSION,
+};
+

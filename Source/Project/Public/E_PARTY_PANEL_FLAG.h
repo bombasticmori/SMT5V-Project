@@ -1,0 +1,14 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_PARTY_PANEL_FLAG.generated.h"
+
+UENUM(BlueprintType)
+enum class E_PARTY_PANEL_FLAG : uint8 {
+    E_PARTY_PANEL_FLAG_NONE,
+    E_PARTY_PANEL_FLAG_ALL_SELECT,
+    E_PARTY_PANEL_FLAG_PARTY_SELECT,
+    E_PARTY_PANEL_FLAG_STOCK_SELECT,
+    E_PARTY_PANEL_FLAG_CHANGE,
+    E_PARTY_PANEL_FLAG_DELETE,
+};
+

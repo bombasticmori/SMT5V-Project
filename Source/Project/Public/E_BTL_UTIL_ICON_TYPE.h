@@ -1,0 +1,16 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_BTL_UTIL_ICON_TYPE.generated.h"
+
+UENUM(BlueprintType)
+enum class E_BTL_UTIL_ICON_TYPE : uint8 {
+    E_BTL_UTIL_ICON_TYPE_RESIST,
+    E_BTL_UTIL_ICON_TYPE_GUARD,
+    E_BTL_UTIL_ICON_TYPE_COMBO,
+    E_BTL_UTIL_ICON_TYPE_WEAK,
+    E_BTL_UTIL_ICON_TYPE_MISS,
+    E_BTL_UTIL_ICON_TYPE_BLOCK,
+    E_BTL_UTIL_ICON_TYPE_CRITICAL,
+    E_BTL_UTIL_ICON_TYPE_NONE,
+};
+

@@ -1,0 +1,13 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "E_CAMPHELPCTRL_GSTATUS.generated.h"
+
+UENUM(BlueprintType)
+enum class E_CAMPHELPCTRL_GSTATUS : uint8 {
+    E_CAMPHELPCTRL_INIT,
+    E_CAMPHELPCTRL_MOVECURSOR,
+    E_CAMPHELPCTRL_END,
+    E_CAMPHELPCTRL_FADEOUT,
+    E_CAMPHELPCTRL_TUTORIAL,
+};
+
