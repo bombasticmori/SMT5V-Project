@@ -2,14 +2,14 @@ Shin Megami Tensei 5: Vengeance Modding Project
 ------------------------------------------
 
 ### Description:
-This is an SDK for Shin Megami Tensei 5: Vengeance, allowing modders to potentially modify more advanced game content.  It's similar in concept to [P3R-Project](https://github.com/rirurin/P3R-Project/)
+This is an SDK for Shin Megami Tensei 5: Vengeance, allowing modders to potentially modify more advanced game content.  It's similar in concept to [P3R-Project](https://github.com/rirurin/P3R-Project/).
 
 C++ headers were dumped using [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS), then serializable files were generated from the game files with [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator) and ported into Unreal Engine with [UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes).
 
 This project only contains asset files for non-graphical assets due to file size limitations. You'll need to import the models, materials, sounds and textures you need on your own.
 
 The majority of C++ classes and Blueprints are only dummies. If you have experience with reversing and want to contribute, feel free to help out.  You can see the current list of what files have been
-reversed by checking Progress.md
+reversed by checking [Progress.md](https://github.com/bombasticmori/SMT5V-Project/blob/master/PROGRESS.md?plain=1)
 
 No content from the non-open source plugins should be reversed unless absolutely necessary. The non-open source plugins distributed here are dummies that only contain parameters and functions names from those plugins, but no actual code.
 This is so the files will map to the ones distributed with the game engine on runtime.

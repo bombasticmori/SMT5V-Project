@@ -2,6 +2,7 @@ This is a list of files that have been manually reversed based on the available 
 If it's on this list and says complete, it's probably as close as we can get it to the original uncooked file.
 If it says incomplete, reversing has started, but its not been finished
 If its not on the list, assume it hasn't been reversed/verified yet. If you reverse/verify it, add it to the list please!
+
 CURRENTLY BROKEN ASSETS:
 \Blueprints\Character\NPC\Npc752\Npc752_AnimBP - missing skeleton
 \Blueprints\Character\NPC\Npc607\Npc607_AnimBP - missing skeleton
