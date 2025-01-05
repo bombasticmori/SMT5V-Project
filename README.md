@@ -41,10 +41,10 @@ Recommended:
 
 ### Credits
 Included Plugins (under MIT license):
-[KawaiiPhysics](https://github.com/pafuhana1213/KawaiiPhysics)
-[ACL](https://github.com/nfrechette/acl)
+- [KawaiiPhysics](https://github.com/pafuhana1213/KawaiiPhysics)
+- [ACL](https://github.com/nfrechette/acl)
 
 Tools Used:
-[RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS)
-[UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)
-[UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes)
+- [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS)
+- [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)
+- [UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes)
