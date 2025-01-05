@@ -34,7 +34,7 @@ Recommended:
 
 ### Installation:
 1) Clone the repository
-2) Right click the SMT5V project file and click "Generate Visual Studio project files"
+2) Right click the SMT5V.uproject file and click "Generate Visual Studio project files"
 3) Open the project in Unreal Engine 4.27.2.  It will ask you to compile. Let it (it might take a while)
 4) (Recommended) Cook your files on loading into the Editor the first time. If you find it can't cook despite having no changes made, please raise an issue.  You can try enabling Iterative Cooking for your own work, via Project Settings -> Cooker -> Iterative cooking for the File-> Cook Content menu item setting, but your results may vary.
 
