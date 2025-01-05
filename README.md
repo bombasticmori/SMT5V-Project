@@ -22,10 +22,10 @@ For Materials and Textures:
 
 If you want to bulk generate FBX Model data, you will also need:
 
--[Blender 3.6](https://www.blender.org/download/releases/3-6/)</li>
--[Blender3D Import psk psa addon](https://github.com/matyalatte/blender3d_import_psk_psa)</li>
--[UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)</li>
--Follow the UEAssetToolkitGenerator [wiki guide](https://github.com/LongerWarrior/UEAssetToolkitGenerator/wiki/Generating-FBX) for Generating FBX
+- [Blender 3.6](https://www.blender.org/download/releases/3-6/)</li>
+- [Blender3D Import psk psa addon](https://github.com/matyalatte/blender3d_import_psk_psa)</li>
+- [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)</li>
+- Follow the UEAssetToolkitGenerator [wiki guide](https://github.com/LongerWarrior/UEAssetToolkitGenerator/wiki/Generating-FBX) for Generating FBX
 
 If you want to help reverse engineer blueprints, you will need:
 [KismetKompiler](https://github.com/tge-was-taken/KismetKompiler/)
