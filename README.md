@@ -26,12 +26,14 @@ If you want to bulk generate FBX Model data, you will also need:
 - [Blender3D Import psk psa addon](https://github.com/matyalatte/blender3d_import_psk_psa)</li>
 - [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)</li>
 - Follow the UEAssetToolkitGenerator [wiki guide](https://github.com/LongerWarrior/UEAssetToolkitGenerator/wiki/Generating-FBX) for Generating FBX
+- See the [GameBanana page](https://gamebanana.com/tools/18864) for this project for a fixed copy of the psk_psa_batch_export.py script used in this step.
 
 If you want to help reverse engineer blueprints, you will need:
 [KismetKompiler](https://github.com/tge-was-taken/KismetKompiler/)
 
 Recommended:
-[UnrealAutoMod](https://github.com/Mythical-Github/unreal_auto_mod) OR [UnrealAutoModInEditor](https://github.com/Mythical-Github/UnrealAutoModInEditor)
+- [UnrealAutoMod](https://github.com/Mythical-Github/unreal_auto_mod) OR [UnrealAutoModInEditor](https://github.com/Mythical-Github/UnrealAutoModInEditor)
+- If using Visual Studio as your IDE, the [Visual Studio Integration Plugin](https://www.fab.com/listings/8a639215-7f85-4cc7-b155-fa2137326209)
 
 ### Installation:
 1) Clone the repository
@@ -48,3 +50,4 @@ Tools Used:
 - [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS)
 - [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator)
 - [UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes)
+- [KismetKompiler](https://github.com/tge-was-taken/KismetKompiler/)
