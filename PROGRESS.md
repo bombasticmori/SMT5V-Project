@@ -33,9 +33,13 @@ Blueprints:
 			BPI_CharaLipSync - COMPLETE
 			CharaBadStatus - INCOMPLETE - 5%
 			CharaBadStatusBase - COMPLETE
-			CharaEyeComponent - COMPLETE
-			CharaHeadComponent - COMPLETE
 			CharaBase - INCOMPLETE - 20%
+			CharaEyeComponent - COMPLETE
+			CharaFloatingComponent - COMPLETE
+			CharaFootStamp - COMPLETE
+			CharaFootTwistAngleCurve - COMPLETE
+			CharaHeadComponent - COMPLETE
+			CharaLegComponent - COMPLETE
 			CV_GazePerVelocity - COMPLETE
 			E_CHARA_MATERIAL_ANIMATION_SLOT - COMPLETE
 			E_MAP_PLAYER_CAMERA_ANIM_TYPE - COMPLETE
@@ -45,7 +49,7 @@ Blueprints:
 			MaterialAnimDecalComponent - COMPLETE
 			MaterialAnimSetting_T - COMPLETE
 			PlayerBase - INCOMPLETE - 5%
-			PlayerCameraInitParam - INCOMPLETE - 0%
+			PlayerCameraInitParam - COMPLETE
 			PlayerDevilBaseParamStruct - COMPLETE
 		Player:
 			Pla601:
