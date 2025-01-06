@@ -40,6 +40,14 @@ Blueprints:
 			CharaFootTwistAngleCurve - COMPLETE
 			CharaHeadComponent - COMPLETE
 			CharaLegComponent - COMPLETE
+			CharaRotateComponent - COMPLETE
+			CharaSinkHelperComponent - COMPLETE
+			CharaSinkTesterInterface - COMPLETE
+			CharaSlopeAdapterComponent - COMPLETE
+			CharaSmearFrameComponent - COMPLETE
+			CharaStepSmootherComponent - COMPLETE
+			CharaUpliftingLightComponent - COMPLETE
+			ClockingParticleSystem - COMPLETE
 			CV_GazePerVelocity - COMPLETE
 			E_CHARA_MATERIAL_ANIMATION_SLOT - COMPLETE
 			E_MAP_PLAYER_CAMERA_ANIM_TYPE - COMPLETE
