@@ -28,10 +28,11 @@ Blueprints:
 				BTL_ADD_SKILL_LIGHT_TASK_DATA - COMPLETE
 	Character:
 		Base:
+			BP_ParentRotationScene - COMPLETE
 			BPI_CharaAction - COMPLETE
 			BPI_CharaBaseAccessor - COMPLETE
 			BPI_CharaLipSync - COMPLETE
-			CharaBadStatus - INCOMPLETE - 5%
+			CharaBadStatus - COMPLETE
 			CharaBadStatusBase - COMPLETE
 			CharaBase - INCOMPLETE - 20%
 			CharaEyeComponent - COMPLETE
@@ -48,6 +49,7 @@ Blueprints:
 			CharaStepSmootherComponent - COMPLETE
 			CharaUpliftingLightComponent - COMPLETE
 			ClockingParticleSystem - COMPLETE
+			DevilSpawnDecal - COMPLETE
 			CV_GazePerVelocity - COMPLETE
 			E_CHARA_MATERIAL_ANIMATION_SLOT - COMPLETE
 			E_MAP_PLAYER_CAMERA_ANIM_TYPE - COMPLETE
@@ -64,6 +66,11 @@ Blueprints:
 				Pla601_PostAnimBP - COMPLETE
 	Common:
 		AssetTable:
+			BPI_CharaBaseTable - COMPLETE
+			BPI_CharaBaseTableInstance - COMPLETE
+			BPI_DevilAssetTable - COMPLETE
+			BPI_DevilAssetTableInstance - COMPLETE
+			BPL_CharaBaseTableData - INCOMPLETE - 25%
 			CharaAssetTable:
 				BadStatusDecal_Array: COMPLETE
 				BadStatusDecal_T: COMPLETE
