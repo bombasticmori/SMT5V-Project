@@ -27,6 +27,8 @@ Plugins/LoadAssetByAssetData/Binaries/
 Plugins/LoadAssetByAssetData/Intermediate/
 Plugins/Prism/Binaries/
 Plugins/Prism/Intermediate/
+Plugins/ProjectActions/Binaries/
+Plugins/ProjectActions/Intermediate/
 Plugins/SpriteStudio6/Binaries/
 Plugins/SpriteStudio6/Intermediate/
 Plugins/Runtime/CriWare/CriWare/Binaries/
