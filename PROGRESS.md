@@ -34,7 +34,7 @@ Blueprints:
 			BPI_CharaLipSync - COMPLETE
 			CharaBadStatus - COMPLETE
 			CharaBadStatusBase - COMPLETE
-			CharaBase - INCOMPLETE - 20%
+			CharaBase - INCOMPLETE - 50%
 			CharaEyeComponent - COMPLETE
 			CharaFloatingComponent - COMPLETE
 			CharaFootStamp - COMPLETE
@@ -85,4 +85,8 @@ Blueprints:
 			BPI_PlayerManager: COMPLETE
 	Map:
 		BPI_MapCommon: COMPLETE
-		
+Design:
+	Character:
+		Common:
+			Anim:
+				DefaultBlendTable - COMPLETE
