@@ -94,7 +94,7 @@ enum class E_CHARA_MOTION_ID : uint8 {
     SKILL_MAGATSUHI_CHAOS,
     GARDEN_WAIT_1,
     GARDEN_WAIT_2,
-    GARDEN_WAIT_3,
+    GARDEN_WAIT_3,//90
     GARDEN_WAIT_4,
     GARDEN_WAIT_5,
     GARDEN_SIT_1,
@@ -102,6 +102,6 @@ enum class E_CHARA_MOTION_ID : uint8 {
     GARDEN_SIT_3,
     GARDEN_SIT_4,
     GARDEN_SIT_5,
-    LEVEL_UP,
+    LEVEL_UP,//98
 };
 
