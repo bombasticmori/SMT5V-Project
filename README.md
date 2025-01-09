@@ -7,10 +7,10 @@ This is an SDK for Shin Megami Tensei 5: Vengeance, allowing modders to potentia
 C++ headers were dumped using [RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS), then serializable files were generated from the game files with [UEAssetToolkitGenerator](https://github.com/LongerWarrior/UEAssetToolkitGenerator) and ported into Unreal Engine with [UEAssetToolkit](https://github.com/Buckminsterfullerene02/UEAssetToolkit-Fixes).
 
 The project now also contains an editor plugin (ProjectActions) that allows the creation of several custom assets used by the game. Currently, these are:
-MaterialParameterApplier
-CharaExpressionTable
-CharaMotionOverrideTable
-MMIAsset
+- MaterialParameterApplier
+- CharaExpressionTable
+- CharaMotionOverrideTable
+- MMIAsset
 
 This will be added to over time. A custom editor widget for MMIAsset files is planned. If you would like to help with that, please let me know.
 
