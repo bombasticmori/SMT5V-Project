@@ -20,7 +20,10 @@ CURRENTLY BROKEN ASSETS:
 
 Blueprints:
 	Battle:
-		Framework
+		Framework:
+			Actors:
+				BPL_ExternalReference - COMPLETE
+				BPL_AICommand - INCOMPLETE - 10%
 			Structs:
 				BTL_ADD_ANIM_CAM_TASK_DATA - COMPLETE
 				BTL_ADD_DECAL_TASK_DATA - COMPLETE
@@ -34,7 +37,7 @@ Blueprints:
 			BPI_CharaLipSync - COMPLETE
 			CharaBadStatus - COMPLETE
 			CharaBadStatusBase - COMPLETE
-			CharaBase - INCOMPLETE - 50%
+			CharaBase - COMPLETE
 			CharaEyeComponent - COMPLETE
 			CharaFloatingComponent - COMPLETE
 			CharaFootStamp - COMPLETE
