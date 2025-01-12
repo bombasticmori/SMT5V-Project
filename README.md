@@ -51,7 +51,7 @@ Recommended:
 
 ### Troubleshooting
 Most issues regarding compilation can be fixed by doing a complete whipe of your compiled files. To do so, delete your 'Binaries' and 'Intermediate' folder in your project root directory, as well as the SMT5V.sln file, then right click the uproject file and select 'Generate Visual Studio project files' again.
-If you have issues with any plugins compiling, try deleting it's Binaries and Intermediate folders in its Plugin directory (SMT5V/Plugins/ProjectActions)
+If you have issues with any plugins compiling, try deleting it's Binaries and Intermediate folders in its Plugin directory (SMT5V/Plugins/ProjectActions). There is a python script in the mod's folder that will automatically delete these folders for the project and all plugins, allowing you to compile them fresh.
 
 If you're having issues with getting files to cook, first check your Output Log.  You can open it from the 'Cooking Failed' popup or by going to Window -> Developer Tools -> Output Log.
 First, identify whether the cooking errors are coming from files you edited or if they're from unedited files.  Some files can also fail to cook due to missing dependencies, so keep that in mind.

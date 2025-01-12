@@ -1,7 +1,7 @@
 #include "CharaBlinkBlend.h"
 
 FCharaBlinkBlend::FCharaBlinkBlend() {
-    this->InTime = 0.00f;
-    this->OutTime = 0.00f;
+    this->InTime = 0.075f;
+    this->OutTime = 0.15f;
 }
 

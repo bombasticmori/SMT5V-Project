@@ -8,7 +8,7 @@ UClass* FCharaBlinkAssetTypeActions::GetSupportedClass() const
 
 FText FCharaBlinkAssetTypeActions::GetName() const
 {
-	return INVTEXT("CharaBlink");
+	return INVTEXT("Chara Blink Asset");
 }
 
 FColor FCharaBlinkAssetTypeActions::GetTypeColor() const

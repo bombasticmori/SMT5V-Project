@@ -6,6 +6,7 @@
 #include "CharaBlinkAssetTypeActions.h"
 #include "CharaExpressionTableAssetActions.h"
 #include "CharaMotionOverrideTableActions.h"
+#include "CharaStampEffectAssetActions.h"
 #define LOCTEXT_NAMESPACE "FProjectActionsModule"
 
 void FProjectActionsModule::StartupModule()
@@ -25,6 +26,9 @@ void FProjectActionsModule::StartupModule()
 	CharaMotionOverrideTableActions = MakeShared < FCharaMotionOverrideTableActions>();
 	FAssetToolsModule::GetModule().Get().RegisterAssetTypeActions(CharaMotionOverrideTableActions.ToSharedRef());
 
+	CharaStampEffectAssetActions = MakeShared < FCharaStampEffectAssetActions>();
+	FAssetToolsModule::GetModule().Get().RegisterAssetTypeActions(CharaStampEffectAssetActions.ToSharedRef());
+
 }
 
 void FProjectActionsModule::ShutdownModule()
@@ -35,6 +39,7 @@ void FProjectActionsModule::ShutdownModule()
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaBlinkActions.ToSharedRef());
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaExpressionTableActions.ToSharedRef());
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaMotionOverrideTableActions.ToSharedRef());
+	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaStampEffectAssetActions.ToSharedRef());
 }
 
 #undef LOCTEXT_NAMESPACE

@@ -21,9 +21,18 @@ bool UBPL_CharaUtil::LoadDevilAssetTableRawData(UDataTable* DataTable, TMap<int3
 void UBPL_CharaUtil::GetSyncGroupPosition(const UAnimInstance* AnimInstance, const FName& GroupName, FName& OutPreviousMarkerName, FName& OutNextMarkerName, float& OutPositionBetweenMarkers) {
 }
 
-int32 UBPL_CharaUtil::GetLODLevel(USkinnedMeshComponent* Mesh) {
-    return 0;
+int32 UBPL_CharaUtil::GetLODLevel(USkinnedMeshComponent* Mesh)
+{
+    if (!Mesh)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("GetLODLevel: Invalid Skinned Mesh Component."));
+        return -1; // Return -1 to indicate an error.
+    }
+
+    // Retrieve the current LOD index
+    return Mesh->PredictedLODLevel;
 }
+
 
 int32 UBPL_CharaUtil::GetCalcIKLevel(USkinnedMeshComponent* Mesh) {
     return 0;

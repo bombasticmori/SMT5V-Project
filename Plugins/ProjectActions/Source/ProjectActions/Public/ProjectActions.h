@@ -7,6 +7,7 @@
 #include "CharaBlinkAssetTypeActions.h"
 #include "CharaExpressionTableAssetActions.h"
 #include "CharaMotionOverrideTableActions.h"
+#include "CharaStampEffectAssetActions.h"
 
 class FProjectActionsModule : public IModuleInterface
 {
@@ -21,5 +22,6 @@ private:
 	TSharedPtr<FCharaBlinkAssetTypeActions> CharaBlinkActions;
 	TSharedPtr<FCharaExpressionTableAssetActions> CharaExpressionTableActions;
 	TSharedPtr<FCharaMotionOverrideTableActions> CharaMotionOverrideTableActions;
+	TSharedPtr<FCharaStampEffectAssetActions> CharaStampEffectAssetActions;
 
 };

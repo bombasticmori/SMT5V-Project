@@ -2,11 +2,11 @@
 
 FCharaExpression::FCharaExpression() {
     this->Animation = NULL;
-    this->BlendTime = 0.00f;
+    this->BlendTime = 0.10f;
     this->LidParam.LidTableIndex = 0;
     this->LipParam.LipTableIndex = 0;
     this->LipParam.ExpressionScale = 0.00f;
-    this->LipParam.LipScale = 0.00f;
+    this->LipParam.LipScale = 1.00f;
     this->BrowParam.OpacityL = 0.00f;
     this->BrowParam.OpacityR = 0.00f;
     this->BrowParam.Texture.Get();
