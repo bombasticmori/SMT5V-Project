@@ -88,6 +88,10 @@ Blueprints:
 			BPI_PlayerManager: COMPLETE
 	Map:
 		BPI_MapCommon: COMPLETE
+	UI:
+		BPI_UIActor: COMPLETE
+		BPI_UIManager: COMPLETE
+		BPL_UICommon: COMPLETE
 Design:
 	Character:
 		Common:
