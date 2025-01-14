@@ -49,6 +49,7 @@ Blueprints:
 			CharaStepSmootherComponent - COMPLETE
 			CharaUpliftingLightComponent - COMPLETE
 			ClockingParticleSystem - COMPLETE
+			CommonCharaBlink - COMPLETE
 			DevilSpawnDecal - COMPLETE
 			E_CHARA_MATERIAL_ANIMATION_SLOT - COMPLETE
 			E_MAP_PLAYER_CAMERA_ANIM_TYPE - COMPLETE
@@ -76,7 +77,7 @@ Blueprints:
 			ProjectPlayerManager - INCOMPLETE - 40%
 			Pla601:
 				Pla601 - COMPLETE
-				Pla601_AnimBP - INCOMPLETE - 95%
+				Pla601_AnimBP - COMPLETE
 				Pla601_PostAnimBP - COMPLETE
 			    Stamp_Pla601 - Incomplete - 40%
 			Pla603:

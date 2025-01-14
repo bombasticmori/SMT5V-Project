@@ -29,6 +29,8 @@ void FProjectActionsModule::StartupModule()
 	CharaStampEffectAssetActions = MakeShared < FCharaStampEffectAssetActions>();
 	FAssetToolsModule::GetModule().Get().RegisterAssetTypeActions(CharaStampEffectAssetActions.ToSharedRef());
 
+	CharaMotionTableAssetActions = MakeShared < FCharaMotionTableAssetActions>();
+	FAssetToolsModule::GetModule().Get().RegisterAssetTypeActions(CharaMotionTableAssetActions.ToSharedRef());
 }
 
 void FProjectActionsModule::ShutdownModule()
@@ -40,6 +42,7 @@ void FProjectActionsModule::ShutdownModule()
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaExpressionTableActions.ToSharedRef());
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaMotionOverrideTableActions.ToSharedRef());
 	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaStampEffectAssetActions.ToSharedRef());
+	FAssetToolsModule::GetModule().Get().UnregisterAssetTypeActions(CharaMotionTableAssetActions.ToSharedRef());
 }
 
 #undef LOCTEXT_NAMESPACE

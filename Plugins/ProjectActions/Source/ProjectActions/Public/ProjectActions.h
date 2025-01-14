@@ -8,6 +8,7 @@
 #include "CharaExpressionTableAssetActions.h"
 #include "CharaMotionOverrideTableActions.h"
 #include "CharaStampEffectAssetActions.h"
+#include "CharaMotionTableAssetActions.h"
 
 class FProjectActionsModule : public IModuleInterface
 {
@@ -23,5 +24,6 @@ private:
 	TSharedPtr<FCharaExpressionTableAssetActions> CharaExpressionTableActions;
 	TSharedPtr<FCharaMotionOverrideTableActions> CharaMotionOverrideTableActions;
 	TSharedPtr<FCharaStampEffectAssetActions> CharaStampEffectAssetActions;
+	TSharedPtr<FCharaMotionTableAssetActions> CharaMotionTableAssetActions;
 
 };
