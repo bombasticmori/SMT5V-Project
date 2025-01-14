@@ -11,6 +11,8 @@
 #include "FadeInMeshStructure.h"
 #include "MaskedMeshStructure.h"
 #include "Templates/SubclassOf.h"
+#include "Components/CapsuleComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "CameraDitherComponent.generated.h"
 
 class UCameraComponent;

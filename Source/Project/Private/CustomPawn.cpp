@@ -4,6 +4,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "CharaParamComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
 
 ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CollisionCylinder"));
@@ -23,43 +26,101 @@ ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) : Super(Ob
 }
 
 UParticleSystemComponent* ACustomPawn::SpawnTrailEmitter(UParticleSystem* EmitterTemplate, FName FirstSocketName, FName SecondSocketName, TEnumAsByte<ETrailWidthMode> WidthMode, float Width) {
-    return NULL;
+    if (!EmitterTemplate || !Mesh) return nullptr;
+
+    UParticleSystemComponent* TrailEmitter = UGameplayStatics::SpawnEmitterAttached(
+        EmitterTemplate,
+        Mesh,
+        FirstSocketName,
+        FVector::ZeroVector,
+        FRotator::ZeroRotator,
+        FVector(Width),
+        EAttachLocation::KeepRelativeOffset
+    );
+
+    if (TrailEmitter) {
+        TrailEmitter->SetTrailSourceData(FirstSocketName,SecondSocketName, WidthMode,Width);
+    }
+
+    return TrailEmitter;
 }
 
 void ACustomPawn::ResetForceEnableMovementInput() {
+    bIgnoreMovementInputByNotifyState = false;
+    bIgnoreRootMotionRotationXY = false;
+    bIgnoreRootMotionTransient = false;
 }
 
 void ACustomPawn::PrepareMapEvent(FMapEventReadyDelegate OnReady) {
+    OnTransformUpdated.Broadcast(true);
+    CallMapEventOnReadyDelegate();
+    OnReady.ExecuteIfBound();
 }
 
-
 bool ACustomPawn::IsRootMotionPlaying() const {
-    return false;
+    return bEnableRootMotion && !bIgnoreRootMotionTransient;
 }
 
 bool ACustomPawn::IsMovingOnGround() const {
-    return false;
+    return CapsuleComponent && CapsuleComponent->IsSimulatingPhysics();
 }
 
 bool ACustomPawn::IsForceEnabledRotateInput() const {
-    return false;
+    return !bIgnoreRootMotionRotationXY;
 }
 
 bool ACustomPawn::IsForceEnabledMovementInput() const {
-    return false;
+    return !bIgnoreMovementInputByNotifyState;
 }
 
 float ACustomPawn::GetGravityZ() const {
-    return 0.0f;
+    return GetWorld() ? GetWorld()->GetGravityZ() : -980.f;
 }
 
+//UCharaParamComponent* ACustomPawn::GetCharaParam() {
+//    // Example implementation: assuming CharaParamComponent is attached to this actor
+//    return FindComponentByClass<UCharaParamComponent>();
+//}
+//
+//bool ACustomPawn::CheckPlayAnimNotifyDevilVoice(EDevilVoiceType DevilVoiceType) const {
+//    if (UAnimInstance* AnimInstance = Mesh->GetAnimInstance()) {
+//        // Iterate through active anim notifies
+//        for (const FAnimNotifyEvent& NotifyEvent : AnimInstance->ActiveAnimNotifyState) {
+//            if (NotifyEvent.Notify && NotifyEvent.Notify->IsA(UAnimNotify::StaticClass())) {
+//                if (NotifyEvent.Notify->GetNotifyName() == TEXT("AnimNotify_DevilVoice")) {
+//                    return true; // Matches the AnimNotify we're looking for
+//                }
+//            }
+//        }
+//    }
+//    return false;
+//}
+//
+//bool ACustomPawn::CheckMagatsuhiDevil() const {
+//    if (UCharaParamComponent* CharaParam = FindComponentByClass<UCharaParamComponent>()) {
+//        return CharaParam->m_IsMagatsuhiDevil;
+//    }
+//    return false;
+//}
 
 void ACustomPawn::ForceEnableMovementInput(float Time, bool bMovement, bool bRotate) {
+    bIgnoreMovementInputByNotifyState = !bMovement;
+    bIgnoreRootMotionRotationXY = !bRotate;
+
+    // Optionally, start a timer to reset these flags after Time seconds
+    if (Time > 0.f) {
+        FTimerHandle TimerHandle;
+        GetWorld()->GetTimerManager().SetTimer(
+            TimerHandle,
+            [this]() {
+                ResetForceEnableMovementInput();
+            },
+            Time,
+            false
+        );
+    }
 }
-
-
 
 void ACustomPawn::CallMapEventOnReadyDelegate() {
 }
-
 

@@ -30,7 +30,7 @@ int32 UBPL_CharaUtil::GetLODLevel(USkinnedMeshComponent* Mesh)
     }
 
     // Retrieve the current LOD index
-    return Mesh->PredictedLODLevel;
+    return Mesh->GetPredictedLODLevel();
 }
 
 

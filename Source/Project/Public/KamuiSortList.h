@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "E_KAMUI_SORT_TYPE.h"
 #include "KamuiSortList.generated.h"
-
+//Note: 'Kamui' seems to refer to Miracles
 UCLASS(Blueprintable)
 class PROJECT_API UKamuiSortList : public UObject {
     GENERATED_BODY()

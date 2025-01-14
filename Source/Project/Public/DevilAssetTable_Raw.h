@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
-#include "Engine/DataTable.h"
 #include "DevilPosData_Raw.h"
 #include "DevilAssetTable_Raw.generated.h"
 

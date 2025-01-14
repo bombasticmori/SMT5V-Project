@@ -1,5 +1,7 @@
 #include "PlayerMovementComponent.h"
-
+#include "Kismet/KismetMathLibrary.h"
+#include "FoliageInstancedStaticMeshComponent.h"
+//These functions were approximated with ChatGPT and are considered 'best guess' approximations until actual reverse engineering is done.
 UPlayerMovementComponent::UPlayerMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->VelocityMin = 100.00f;
     this->VelocityMax = 700.00f;
@@ -55,111 +57,172 @@ UPlayerMovementComponent::UPlayerMovementComponent(const FObjectInitializer& Obj
 }
 
 void UPlayerMovementComponent::UpdateFoliageActorList() {
+    // Example logic to update foliage actor list
+    FoliageCompList.Empty();
+    // Add updated components (mock implementation)
+    // FoliageCompList.Add(SomeFoliageComponent);
 }
 
 void UPlayerMovementComponent::TurnOnEdgeGripArrivalTrigger() {
+    bEnableEdgeGrip = true;
 }
 
 void UPlayerMovementComponent::SetParamJump(float NewGravityJump, float NewVelocityJump) {
+    gravityJump = NewGravityJump;
+    velocityJump = NewVelocityJump;
 }
 
 void UPlayerMovementComponent::SetKeyFreeForce(const FVector& Force) {
+    IdealVelocity += Force;
 }
 
 void UPlayerMovementComponent::RotateToTarget(AActor* TargetActor, FPlayerMoveToTargetSignature OnArrived, float TimeToGiveUp) {
+    if (!TargetActor) return;
+
+    FVector TargetLocation = TargetActor->GetActorLocation();
+    FRotator DesiredRotation = UKismetMathLibrary::FindLookAtRotation(GetOwner()->GetActorLocation(), TargetLocation);
+
+    GetOwner()->SetActorRotation(DesiredRotation);
+    OnArrived.ExecuteIfBound();
 }
 
 void UPlayerMovementComponent::ResetMovementVelocity() {
+    IdealVelocity = FVector::ZeroVector;
 }
 
 void UPlayerMovementComponent::ResetMovementState(bool bResetLanding, bool bResetLandingValue) {
+    bEnableSliding = bResetLanding;
+    bSliding = bResetLandingValue;
 }
 
 void UPlayerMovementComponent::ResetMovementInputVector() {
+    IdealVelocity = FVector::ZeroVector;
 }
 
 void UPlayerMovementComponent::ResetBrakeTurnStandby() {
+    bWalkBrakeStandby = false;
+    bRunBrakeStandby = false;
+    bRunTurnStandby = false;
+    bDashTurnStandby = false;
 }
 
 TArray<UParticleSystemComponent*> UPlayerMovementComponent::PlayAttackVsFoliageEffect(const FBox& InAttackAABB) {
-    return TArray<UParticleSystemComponent*>();
+    TArray<UParticleSystemComponent*> ParticleEffects;
+    for (auto& FoliageComp : FoliageCompList) {
+        if (FoliageComp->Bounds.GetBox().Intersect(InAttackAABB)) {
+            // Mock logic for spawning particles
+            UParticleSystemComponent* Particle = NewObject<UParticleSystemComponent>(this);
+            ParticleEffects.Add(Particle);
+        }
+    }
+    return ParticleEffects;
 }
 
 void UPlayerMovementComponent::MoveToTargetLocation(FVector TargetLocation, float MoveSpeed, FPlayerMoveToTargetSignature OnArrived, float Distance, float TimeToGiveUp) {
+    FVector CurrentLocation = GetOwner()->GetActorLocation();
+    FVector Direction = (TargetLocation - CurrentLocation).GetSafeNormal();
+
+    IdealVelocity = Direction * MoveSpeed;
+
+    if (FVector::Dist(CurrentLocation, TargetLocation) <= Distance) {
+        OnArrived.ExecuteIfBound();
+        ResetMovementVelocity();
+    }
 }
 
 void UPlayerMovementComponent::MoveToTargetDirection(FVector TargetDirection, float Distance, float MoveSpeed, FPlayerMoveToTargetSignature OnArrived, float TimeToGiveUp) {
+    IdealVelocity = TargetDirection.GetSafeNormal() * MoveSpeed;
+
+    if (IdealVelocity.Size() <= Distance) {
+        OnArrived.ExecuteIfBound();
+        ResetMovementVelocity();
+    }
 }
 
 void UPlayerMovementComponent::MoveToTarget(AActor* TargetActor, float MoveSpeed, FPlayerMoveToTargetSignature OnArrived, float Distance, float TimeToGiveUp) {
+    if (!TargetActor) return;
+
+    MoveToTargetLocation(TargetActor->GetActorLocation(), MoveSpeed, OnArrived, Distance, TimeToGiveUp);
 }
 
 void UPlayerMovementComponent::JumpTakeOff() {
+    if (bEnableJump) {
+        FVector JumpForce = FVector(0.f, 0.f, velocityJump);
+        IdealVelocity += JumpForce;
+        bEnableJump = false; // Disables further jumps until reset
+    }
 }
 
 bool UPlayerMovementComponent::Jump() {
+    if (bEnableJump) {
+        JumpTakeOff();
+        return true;
+    }
     return false;
 }
 
 bool UPlayerMovementComponent::IsJumping() const {
-    return false;
+    return IdealVelocity.Z > 0.f;
 }
 
 bool UPlayerMovementComponent::IsEdgeGrippingStrictly() const {
-    return false;
+    return bEnableEdgeGrip && bSliding; // Example logic
 }
 
 bool UPlayerMovementComponent::IsEdgeGripping() const {
-    return false;
+    return bEnableEdgeGrip;
 }
 
 bool UPlayerMovementComponent::IsDashingForEffect() const {
-    return false;
+    return bDashing && IdealVelocity.Size() > DashVelocityMax;
 }
 
 bool UPlayerMovementComponent::IsDashing() const {
-    return false;
+    return bDashing;
 }
 
 bool UPlayerMovementComponent::IsAutoPilotMoving() const {
-    return false;
+    return bAutoRun;
 }
 
 float UPlayerMovementComponent::GetMovementSpeed() const {
-    return 0.0f;
+    return IdealVelocity.Size();
 }
 
 float UPlayerMovementComponent::GetJumpHeight() const {
-    return 0.0f;
+    return velocityJump;
 }
 
 void UPlayerMovementComponent::ForceRotateActorWhileKeepingCamera(const FRotator& InNewRotation) {
+    GetOwner()->SetActorRotation(InNewRotation);
 }
 
 bool UPlayerMovementComponent::EndEdgeGrip() {
-    return false;
+    bEnableEdgeGrip = false;
+    return true;
 }
 
 bool UPlayerMovementComponent::EdgeGripAdjustFinished() const {
-    return false;
+    return !bSliding;
 }
 
 void UPlayerMovementComponent::ClearFoliageActorList() {
+    FoliageCompList.Empty();
 }
 
 bool UPlayerMovementComponent::CanJump() const {
-    return false;
+    return bEnableJump;
 }
 
 bool UPlayerMovementComponent::CanDebugJump() const {
-    return false;
+    return bDebugJumpTrigger;
 }
 
 bool UPlayerMovementComponent::BeginEdgeGrip(const FVector& WallRight, const FVector& GripPoint) {
-    return false;
+    bEnableEdgeGrip = true;
+    return true;
 }
 
 void UPlayerMovementComponent::AddGimmickForce(const FVector& Force, float DumpingSpeed) {
+    IdealVelocity += Force / DumpingSpeed;
 }
-
-

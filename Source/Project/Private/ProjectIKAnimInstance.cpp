@@ -1,4 +1,5 @@
 #include "ProjectIKAnimInstance.h"
+#include "Kismet/KismetMathLibrary.h"
 
 UProjectIKAnimInstance::UProjectIKAnimInstance() {
     this->RootMotionMode = ERootMotionMode::NoRootMotionExtraction;
@@ -32,13 +33,57 @@ UProjectIKAnimInstance::UProjectIKAnimInstance() {
     this->bUpdatedFootIK = false;
 }
 
-void UProjectIKAnimInstance::UpdateParameters(bool bInMoveOnGround, float InCurrentSpeed, float InMaxSpeedRun, float InMaxSpeedDash) {
+void UProjectIKAnimInstance::UpdateParameters(bool bInMoveOnGround, float InCurrentSpeed, float InMaxSpeedRun, float InMaxSpeedDash)
+{
+    // Check if the character is on the ground
+    if (bInMoveOnGround)
+    {
+        // Adjust PelvisOffset based on movement speed
+        if (InCurrentSpeed < InMaxSpeedRun)
+        {
+            PelvisOffset.Z = UKismetMathLibrary::FInterpTo(PelvisOffset.Z, GroundingCorrectDistance, GetWorld()->GetDeltaSeconds(), CompHeightInterpSpeed_Down);
+        }
+        else if (InCurrentSpeed < InMaxSpeedDash)
+        {
+            PelvisOffset.Z = UKismetMathLibrary::FInterpTo(PelvisOffset.Z, GroundingCorrectDistance * 0.5f, GetWorld()->GetDeltaSeconds(), CompHeightInterpSpeed_Up);
+        }
+        else
+        {
+            PelvisOffset.Z = UKismetMathLibrary::FInterpTo(PelvisOffset.Z, 0.0f, GetWorld()->GetDeltaSeconds(), CompHeightInterpSpeed_Down_Grounding);
+        }
+    }
+    else
+    {
+        // Reset offsets if not on the ground
+        PelvisOffset = FVector::ZeroVector;
+    }
 }
 
-void UProjectIKAnimInstance::TickFootIK(float DeltaSeconds) {
+void UProjectIKAnimInstance::TickFootIK(float DeltaSeconds)
+{
+    if (!bEnableFootIK) return;
+
+    // Simulate IK adjustments for the left and right foot
+    LeftFootOffset.Z = UKismetMathLibrary::FInterpTo(LeftFootOffset.Z, StepHeightLimitMax, DeltaSeconds, FootHeightInterpSpeed);
+    RightFootOffset.Z = UKismetMathLibrary::FInterpTo(RightFootOffset.Z, StepHeightLimitMax, DeltaSeconds, FootHeightInterpSpeed);
+
+    // Interpolate ankle rotation offsets
+    LeftAnkleRotationOffset = UKismetMathLibrary::RInterpTo(LeftAnkleRotationOffset, FRotator::ZeroRotator, DeltaSeconds, AnkleRotationInterpSpeed_Up);
+    RightAnkleRotationOffset = UKismetMathLibrary::RInterpTo(RightAnkleRotationOffset, FRotator::ZeroRotator, DeltaSeconds, AnkleRotationInterpSpeed_Up);
+
+    bUpdatedFootIK = true;
 }
 
-void UProjectIKAnimInstance::ResetFootIK() {
+void UProjectIKAnimInstance::ResetFootIK()
+{
+    // Reset all foot IK-related offsets and rotations
+    PelvisOffset = FVector::ZeroVector;
+    LeftFootOffset = FVector::ZeroVector;
+    RightFootOffset = FVector::ZeroVector;
+    LeftAnkleRotationOffset = FRotator::ZeroRotator;
+    RightAnkleRotationOffset = FRotator::ZeroRotator;
+
+    bUpdatedFootIK = false;
 }
 
 

@@ -19,12 +19,32 @@ UKawaiiHairParameter::UKawaiiHairParameter() {
     this->LimitAngle = 0.00f;
 }
 
+void UKawaiiHairParameter::KawaiiHairInterpTo(UPARAM(Ref)FRuntimeKawaiiHairParameter& Current, const FKawaiiHairBundleParameter& Target, float DeltaTime, float InterpSpeed) {
+    // Interpolate vector properties of Current towards Target
+    Current.ForceCenter = FMath::VInterpTo(Current.ForceCenter, Target.ForceCenter, DeltaTime, InterpSpeed);
+    Current.ForceRightA = FMath::VInterpTo(Current.ForceRightA, Target.ForceRightA, DeltaTime, InterpSpeed);
+    Current.ForceRightB = FMath::VInterpTo(Current.ForceRightB, Target.ForceRightB, DeltaTime, InterpSpeed);
+    Current.ForceRightC = FMath::VInterpTo(Current.ForceRightC, Target.ForceRightC, DeltaTime, InterpSpeed);
+    Current.ForceLeftA = FMath::VInterpTo(Current.ForceLeftA, Target.ForceLeftA, DeltaTime, InterpSpeed);
+    Current.ForceLeftB = FMath::VInterpTo(Current.ForceLeftB, Target.ForceLeftB, DeltaTime, InterpSpeed);
+    Current.ForceLeftC = FMath::VInterpTo(Current.ForceLeftC, Target.ForceLeftC, DeltaTime, InterpSpeed);
 
-void UKawaiiHairParameter::KawaiiHairInterpTo(FRuntimeKawaiiHairParameter& Current, const FKawaiiHairBundleParameter& target, float DeltaTime, float InterpSpeed) {
+    // Interpolate scalar properties
+    Current.Alpha = FMath::FInterpTo(Current.Alpha, 1.0f, DeltaTime, InterpSpeed);
+    Current.PoseLocationApplyRate = FMath::FInterpTo(Current.PoseLocationApplyRate, 1.0f, DeltaTime, InterpSpeed);
 }
 
 FRuntimeKawaiiHairParameter UKawaiiHairParameter::KawaiiHairAddForceToAllBundle(const FRuntimeKawaiiHairParameter& Param, const FVector& AddForce) {
-    return FRuntimeKawaiiHairParameter{};
+    FRuntimeKawaiiHairParameter UpdatedParam = Param;
+
+    // Add the same force to all relevant force vectors
+    UpdatedParam.ForceCenter += AddForce;
+    UpdatedParam.ForceRightA += AddForce;
+    UpdatedParam.ForceRightB += AddForce;
+    UpdatedParam.ForceRightC += AddForce;
+    UpdatedParam.ForceLeftA += AddForce;
+    UpdatedParam.ForceLeftB += AddForce;
+    UpdatedParam.ForceLeftC += AddForce;
+
+    return UpdatedParam;
 }
-
-

@@ -4,7 +4,7 @@
 #include "E_KAMUI_UI_INPUT_TYPE.h"
 #include "E_KAMUI_UI_USE_KEY.h"
 #include "KamuiWindowBase.generated.h"
-
+//Note: 'Kamui' seems to refer to Miracles
 UCLASS(Blueprintable)
 class PROJECT_API AKamuiWindowBase : public AActor {
     GENERATED_BODY()
