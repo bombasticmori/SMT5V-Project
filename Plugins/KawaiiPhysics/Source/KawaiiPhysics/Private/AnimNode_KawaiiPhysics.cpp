@@ -370,7 +370,10 @@ void FAnimNode_KawaiiPhysics::UpdatePhysicsSettingsOfModifyBones()
 		{
 			Bone.PhysicsSettings.WorldDampingLocation *= WorldDampingLocationCurveData.GetRichCurve()->Eval(LengthRate);
 		}
-		Bone.PhysicsSettings.WorldDampingLocation = FMath::Clamp<float>(Bone.PhysicsSettings.WorldDampingLocation, 0.0f, 1.0f);
+		//CUSTOM: Account for changing WorldDampingLocation to a vector
+		Bone.PhysicsSettings.WorldDampingLocation.X = FMath::Clamp<float>(Bone.PhysicsSettings.WorldDampingLocation.X, 0.0f, 1.0f);
+		Bone.PhysicsSettings.WorldDampingLocation.Y = FMath::Clamp<float>(Bone.PhysicsSettings.WorldDampingLocation.Y, 0.0f, 1.0f);
+		Bone.PhysicsSettings.WorldDampingLocation.Z = FMath::Clamp<float>(Bone.PhysicsSettings.WorldDampingLocation.Z, 0.0f, 1.0f);
 
 		// WorldRotationDamping
 		Bone.PhysicsSettings.WorldDampingRotation = PhysicsSettings.WorldDampingRotation;
@@ -569,7 +572,10 @@ void FAnimNode_KawaiiPhysics::SimulateModifyBones(FComponentSpacePoseContext& Ou
 		}
 
 		// Follow Translation
-        Bone.Location += SkelCompMoveVector * (1.0f - Bone.PhysicsSettings.WorldDampingLocation);
+		//CUSTOM: Account for changing WorldDampingLocation to a vector
+        Bone.Location.X += SkelCompMoveVector.X * (1.0f - Bone.PhysicsSettings.WorldDampingLocation.X);
+        Bone.Location.Y += SkelCompMoveVector.Y * (1.0f - Bone.PhysicsSettings.WorldDampingLocation.Y);
+        Bone.Location.Z += SkelCompMoveVector.Z * (1.0f - Bone.PhysicsSettings.WorldDampingLocation.Z);
 
 		// Follow Rotation
 		Bone.Location += (SkelCompMoveRotation.RotateVector(Bone.PrevLocation) - Bone.PrevLocation)

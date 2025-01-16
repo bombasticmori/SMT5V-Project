@@ -140,7 +140,7 @@ struct KAWAIIPHYSICS_API FKawaiiPhysicsSettings
 	float Damping = 0.1f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0"), category = "KawaiiPhysics")
-	float WorldDampingLocation = 0.8f;
+	FVector WorldDampingLocation = { 0.8f,0.8f,0.8f };
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0"), category = "KawaiiPhysics")
 	float WorldDampingRotation = 0.8f;
@@ -187,6 +187,8 @@ public:
 	float LengthFromRoot = 0.0f;
 	UPROPERTY()
 	bool bDummy = false;
+	UPROPERTY()
+	float GazeAngleRate = 0.0f;
 
 
 public:
@@ -339,7 +341,12 @@ public:
 	/** Scale to apply to calculated wind velocities in the solver */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Wind", meta = (DisplayAfter = "bEnableWind"), meta = (PinHiddenByDefault))
 	float WindScale = 1.0f;
-
+	/* CUSTOM: Limits hair position based on gaze angle?*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom", meta = (PinHiddenByDefault))
+	float GazeAngle = 0.0f;
+	/* CUSTOM: Limits hair position based on gaze angle?*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom", meta = (PinHiddenByDefault))
+	UCurveFloat* GazeAngleRateCurve;
 	/**
 	 *	EXPERIMENTAL. Perform sweeps for each simulating bodies to avoid collisions with the world.
 	 *	This greatly increases the cost of the physics simulation.

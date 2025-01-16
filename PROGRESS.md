@@ -80,11 +80,17 @@ Blueprints:
 				Pla601_AnimBP - COMPLETE
 				Pla601_PostAnimBP - COMPLETE
 			    Stamp_Pla601 - Incomplete - 40%
+			Pla602:
+				Pla602 - COMPLETE
+				Pla602_AnimBP - COMPLETE
 			Pla603:
 				Pla603 - INCOMPLETE - 5%
-				Pla603_AnimBP - INCOMPLETE - 1%
+				Pla603_AnimBP - INCOMPLETE - 50%
 				Pla603_PostAnimBP - COMPLETE
 				Stamp_Pla603 - INCOMPLETE - 0%
+			Pla620:
+				Pla620 - COMPLETE
+				Pla620_AnimBP - COMPLETE
 	Common:
 		BPL_Common: COMPLETE
 		AssetTable:
@@ -111,7 +117,7 @@ Design:
 	Character:
 		Common:
 			Anim:
-				DefaultBlendTable - COMPLETE.
+				DefaultBlendTable - COMPLETE
 
 
 C++ Classes:
